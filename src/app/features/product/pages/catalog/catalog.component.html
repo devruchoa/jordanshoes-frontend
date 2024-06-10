@@ -1,0 +1,26 @@
+<section class="container d-flex flex-column align-items-center pt-5">
+  <div class="d-flex flex-column align-items-center p-4">
+    <h2 class="fs-4 fw-bold">Os melhores em um só lugar</h2>
+    <p>
+      A marca Jordan na JordanShoes é a escolha certa para <br>
+      os amantes de sneakers que buscam estilo e conforto.
+    </p>
+  </div>
+  <div class="row p-4">
+    @for (product of products; track $index) {
+      <mat-card class="col-lg-4 col-md-6 col-sm-12 shadow-none mb-3">
+        <img mat-card-image class="img-fluid w-auto" [ngSrc]="product.imageUrl" height="200" width="384"
+             [alt]="product.title">
+        <mat-card-header>
+          <mat-card-title>{{ product.title }}</mat-card-title>
+          <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="mt-2">
+          <p>
+            {{ product.price }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    }
+  </div>
+</section>
